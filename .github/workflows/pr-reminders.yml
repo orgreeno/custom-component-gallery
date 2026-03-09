@@ -39,7 +39,7 @@ jobs:
                 per_page:     100
               });
 
-              const bodies        = comments.data.map(c => c.body);
+              const bodies           = comments.data.map(c => c.body);
               const hasWeekReminder  = bodies.some(b => b.includes(WEEK_MARKER));
               const hasMonthReminder = bodies.some(b => b.includes(MONTH_MARKER));
 
@@ -48,28 +48,14 @@ jobs:
                   owner:        context.repo.owner,
                   repo:         context.repo.repo,
                   issue_number: pr.number,
-                  body: `${MONTH_MARKER}
-Heyyyy! It's been a whole month since you opened this PR — we don't want to lose you!
-
-Just a kind reminder that your component won't be accepted until you submit the form on the gallery website:
-https://retoolcustomcomponents.netlify.app/
-
-That's the last step — it's where you add your cover image, description, and tags so it shows up on the gallery card. Once submitted, our team reviews it and gets it live.
-
-We're rooting for you, don't let it slip away!`
+                  body: MONTH_MARKER + "\nHeyyyy! It's been a whole month since you opened this PR — we don't want to lose you!\n\nJust a kind reminder that your component won't be accepted until you submit the form on the gallery website:\nhttps://retoolcustomcomponents.netlify.app/\n\nThat's the last step — it's where you add your cover image, description, and tags so it shows up on the gallery card. Once submitted, our team reviews it and gets it live.\n\nWe're rooting for you, don't let it slip away!"
                 });
               } else if (age >= ONE_WEEK_MS && !hasWeekReminder) {
                 await github.rest.issues.createComment({
                   owner:        context.repo.owner,
                   repo:         context.repo.repo,
                   issue_number: pr.number,
-                  body: `${WEEK_MARKER}
-Hey! Just a reminder, your PR has been open for a week but your component hasn't been approved yet.
-
-That's because it also needs to be submitted on the gallery website:
-https://retoolcustomcomponents.netlify.app/
-
-This is the last step! It only takes a few minutes — once submitted, our team will review it and get it live in the gallery. 🎉`
+                  body: WEEK_MARKER + "\nHey! Just a reminder, your PR has been open for a week but your component hasn't been approved yet.\n\nThat's because it also needs to be submitted on the gallery website:\nhttps://retoolcustomcomponents.netlify.app/\n\nThis is the last step! It only takes a few minutes — once submitted, our team will review it and get it live in the gallery. 🚀"
                 });
               }
             }
