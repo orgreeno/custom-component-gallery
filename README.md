@@ -1,6 +1,6 @@
 # Retool Custom Component Gallery
 
-This repository contains every component listed on the [Retool Custom Component Gallery](https://retoolcustomcomponents.netlify.app/). Each folder inside `components/` is a community-submitted Retool custom component, including its source code, metadata, and cover image.
+This repository contains every component listed on the [Retool Custom Component Gallery](https://angelikretool.github.io/gallery-frontend/). Each folder inside `components/` is a community-submitted Retool custom component, including its source code, metadata, and cover image.
 
 ---
 
@@ -20,7 +20,7 @@ Each component lives in its own folder under `components/`. Open the folder you 
 
 To add your component to the gallery:
 
-1. Visit [retoolcustomcomponents.netlify.app](https://retoolcustomcomponents.netlify.app/) and click **Submit Component**
+1. Visit [[https://angelikretool.github.io/gallery-frontend/](https://angelikretool.github.io/gallery-frontend/) and click **Submit Component**
 2. Follow the instructions in [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 You will need a finished component built with the [custom-component-collection-template](https://github.com/tryretool/custom-component-collection-template). If you have not built one yet, start there.
